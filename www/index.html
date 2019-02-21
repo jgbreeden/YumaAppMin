@@ -66,7 +66,9 @@
 		
 		<!-- panel to reveal -->
 		<div data-role="panel" id="panel" data-position="left" data-display="overlay" data-theme="a">
-			<p>Settings<br>Profile<br>News</p>
+			<p id="settings">Settings</p>
+			<p id="profile">Profile</p>
+			<p id="news">News</p>
 			<a href="#close" data-rel="close">Close</a>
 		</div><!-- /panel -->
 
@@ -119,5 +121,15 @@
 			$(function() {
 				try{$( "body>[data-role=\'panel\']" ).panel();}catch(e){}
 			});
-        </script></body>
+			$( "#settings" ).click(function() {
+				alert( "This is were we will display settings" );
+			});
+			$( "#profile" ).click(function() {
+				alert( "This will display the user profile" );
+			});
+			$( "#news" ).click(function() {
+				alert( "This will display any news for the park" );
+			});
+		</script>
+		</body>
 </html>
