@@ -119,10 +119,13 @@ h1 {
     border-color: rgb(41, 128, 41);
     border-style: solid;
     border-width: 2px;
-    color: white;
+    color: black;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: block;
     font-size: 16px;
+}
+.panelBtn:link {
+    color: black;
 }
