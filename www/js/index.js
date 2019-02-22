@@ -18,6 +18,7 @@
  */
 var mapimg = new Image();
 var db;  
+var my_media = null;
 const CWIDTH = 507;
 const CHEIGHT = 330;
 
@@ -39,11 +40,27 @@ var Btitle = ["Info Center","Storehouse",
     ];
     console.log(Btitle[0]);
 
-var Bimage = ["vic.jpg", "storehouse2.jpg", "qmo.jpg",
-    "kitchen.jpg", "ch.jpg",   
-    "river.jpg", "pscar.jpg" 
-];
+var Bimage = ["img/vic.jpg", "img/storehouse2.jpg", "img/qmo.jpg",
+    "img/kitchen.jpg", "img/ch.jpg",   
+    "img/river.jpg", "img/pscar.jpg" 
+    ];
     console.log(Bimage[0]);
+
+var Baudio1 = ["audio/visitor1.wav","audio/store80's.wav",
+    "audio/office80's.wav",
+    "audio/house80's.wav",
+    "audio/corral80's.wav",
+    "audio/resivoir80's.wav",
+    "audio/passanger1.wav"
+    ];
+
+var Baudio2 = ["audio/visitor2.wav","audio/store20's.wav",
+    "audio/office20's.wav",
+    "audio/house20's.wav",
+    "audio/corral20's.wav",
+    "audio/resivoir20's.wav",
+    "audio/passanger2.wav"
+    ];
 
 var app = {
     // Application Constructor
@@ -136,6 +153,8 @@ var app = {
         document.getElementById("p3text").innerHTML = Btext[this.sql];
         document.getElementById("pagename").innerText = Btitle[this.sql];
         document.getElementById("p3img").src = Bimage[this.sql];
+        document.getElementById("btn1").onclick = app.playAudio(Baudio1[this.sql]);
+        document.getElementById("btn2").onclick = app.playAudio(Baudio2[this.sql]);
 
         //db.transaction(this.getSql, this.errData, app.showData);
         console.log(x + "-" + y)
@@ -153,8 +172,14 @@ var app = {
 
     errData: function(err) {
         alert("error:" + err.message + ":" + err.code);
-    }
+    },
 
+    playAudio: function(src) {
+        if (my_media == null) {
+            my_media = new Media(src);
+        }
+        my_media.play();
+    }
  
 
 };
