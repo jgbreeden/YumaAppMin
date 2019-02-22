@@ -21,6 +21,29 @@ var db;
 const CWIDTH = 507;
 const CHEIGHT = 330;
 
+var Btext = ["This is the code for building 1", 
+    "This is the code for building 2",
+    "This is the code for building 3",
+    "This is the code for building 4",
+    "This is the code for building 5",
+    "This is the code for building 6",
+    ]; 
+    console.log(Btext[0]);
+
+var Btitle = ["Info Center","Storehouse",
+    "Quarter Masters Office",
+    "Quarter master's house & kitchen",
+    "Corral House",
+    "Reseviour",
+    "Passenger Car"
+    ];
+    console.log(Btitle[0]);
+
+var Bimage = ["vic.jpg", "storehouse2.jpg", "qmo.jpg",
+    "kitchen.jpg", "ch.jpg",   
+    "river.jpg", "pscar.jpg" 
+];
+    console.log(Bimage[0]);
 
 var app = {
     // Application Constructor
@@ -83,45 +106,41 @@ var app = {
 
     getBuilding:function(x, y) {
 
-        this.sql = "SELECT * FROM buildings WHERE id=";
+        //this.sql = "SELECT * FROM buildings WHERE id=";
 
         if (x >= 84 && x <= 124 && y >=228 && y <=279) {
-            this.sql += "1";
-            document.getElementById("pagename").innerText = "Info Center";
-            document.getElementById("p3img").src = "img/vic.jpg";
+            this.sql += "0";
+        
         }else if (x >= 191 && x <= 267 && y >= 98 && y <= 190){
-           this.sql += "2";
-           document.getElementById("pagename").innerText = "Storehouse";
-           document.getElementById("p3img").src = "img/storehouse.jpg";
+            this.sql += "1";
+
         }else if (x >= 283 && x <= 373 && y >= 99 && y <= 147){
-            this.sql += "3";   
-            document.getElementById("pagename").innerText = "Quartermaster's Office";
-            document.getElementById("p3img").src = "img/qmo.jpg";
+            this.sql += "2";   
+            
         }else if (x >= 404 && x <= 467 && y >= 46 && y <= 106){
-            this.sql += "4";   
-            document.getElementById("pagename").innerText = "Quartermaster's House & Kitchen";
-            document.getElementById("p3img").src = "img/kitchen.jpg";
+            this.sql += "3";   
+            
         }else if (x >= 142 && x <= 272 && y >= 258 && y <= 332){
-            this.sql += "5";   
-            document.getElementById("pagename").innerText = "Corral House";
-            document.getElementById("p3img").src = "img/ch.jpg";
+            this.sql += "4";   
+           
         }else if (x >= 292 && x <= 330 && y >= 31 && y <= 69){
-            this.sql += "6";   
-            document.getElementById("pagename").innerText = "Resevoir";
-            document.getElementById("p3img").src = "img/river.jpg";
+            this.sql += "5";   
+            
         }else if (x >= 127 && x <= 173 && y >= 87 && y <= 147){
-            this.sql += "7";   
-            document.getElementById("pagename").innerText = "Passenger Car";
-            document.getElementById("p3img").src = "img/pscar.jpg";   
+            this.sql += "6";   
+            
         } else {
-            this.sql += "8";
-            document.getElementById("pagename").innerText = "Scenic Park Lawn or Walkway";
-            document.getElementById("p3img").src = "img/lawn.jpg";
+            this.sql += "7";
+            
         }
+        document.getElementById("p3text").innerHTML = Btext[this.sql];
+        document.getElementById("pagename").innerText = Btitle[this.sql];
+        document.getElementById("p3img").src = Bimage[this.sql];
+
         //db.transaction(this.getSql, this.errData, app.showData);
         console.log(x + "-" + y)
-    },
-
+    }, 
+             
     getSql: function(tx) {
         tx.executeSql(app.sql, [], app.showData, app.errData);
     },
