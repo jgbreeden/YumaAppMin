@@ -66,18 +66,27 @@ h1 {
     text-align:center;
 }
 
-@media screen and (max-width:959px) {
+#canvas1 {
+    width: 1014px;
+    height: 660px;
+    margin: auto;
+    border: 1px solid black;
+}
+
+@media screen and (max-height:396px) {
     #canvas1 {
         width: 507px;
         height: 330px;
-        margin: auto;
+        border: 1px solid blue;
     }
 }
-@media screen and (min-width:960px) {
+@media screen and (max-height:660px) {
+
     #canvas1 {
-        width: 1014px;
-        height: 660px;
+        width: 609px;
+        height: 396px; 
         margin: auto;
+        border: 1px solid green;
     }
 }
 
@@ -119,7 +128,7 @@ h1 {
     border-color: rgb(41, 128, 41);
     border-style: solid;
     border-width: 2px;
-    color: black;
+    color: white;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
