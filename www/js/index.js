@@ -121,7 +121,7 @@ var app = {
     },
 
     loadImage: function() {
-        // var cvs = document.getElementById("canvas1");
+        //var cvs = document.getElementById("canvas1");
         var ctx = document.getElementById("canvas1").getContext("2d");
         ctx.drawImage(mapimg, 0, 0, 507, 330);
         screen.orientation.lock("landscape");
@@ -131,27 +131,27 @@ var app = {
     setImg: function() {
         
         var setHeight = (window.innerHeight > window.innerWidth) ? window.innerWidth: window.innerHeight;
-    
-        //var cvs = document.getElementById("canvas1");
-        // if (setHeight >= CHEIGHT + 10) {
-        //     //cvs.width = CWIDTH;
-        //     //cvs.height = cvs.width * 0.65; // "auto";
-        //     mapimg.src = "img/park_hdpi.jpg";
-        //     app.mapmult = 1.0;
-        //     console.log("high");
-        // } else if (setHeight >= CHEIGHT * 0.62) {
+        alert("width:" + window.innerWidth + " height:" + window.innerHeight);
+        var cvs = document.getElementById("canvas1");
+        if (setHeight >= CHEIGHT + 10) {
+            //cvs.width = CWIDTH;
+            //cvs.height = cvs.width * 0.65; // "auto";
+            mapimg.src = "img/park_hdpi.jpg";
+            app.mapmult = 0.5;
+            console.log("high");
+        } else {//} if (setHeight >= CHEIGHT * 0.62) {
             //cvs.width = CWIDTH * 0.60;
             //cvs.height = cvs.width * 0.65; // "auto";
             mapimg.src = "img/park_mdpi.jpg";
-            app.mapmult = 0.62;
+            app.mapmult = 0.78;
             console.log("med");
-        // } else {
-        //     //cvs.width = CWIDTH * 0.5;
-        //     //cvs.height = cvs.width * 0.65; // "auto";
-        //     mapimg.src = "img/park_ldpi.jpg";
-        //     app.mapmult = 0.5;
-        //     console.log("low");
-        // }
+        //} else {
+            //cvs.width = CWIDTH * 0.5;
+            //cvs.height = cvs.width * 0.65; // "auto";
+            //mapimg.src = "img/park_ldpi.jpg";
+            //app.mapmult = 1.0;
+            //console.log("low");
+        }
         
         //mapimg.width = cvs.width;
         //mapimg.height = cvs.height;
@@ -168,8 +168,9 @@ var app = {
     getBuilding:function(x, y) {
 
         //this.sql = "SELECT * FROM buildings WHERE id=";
-        x = x * app.mapmult * 1.3;
-        y = y * app.mapmult * 1.3;
+        alert("img:" + mapimg.src + " x:" + x + " y:" + y);
+        x = x * app.mapmult // * 1.3;
+        y = y * app.mapmult // * 1.3;
         if (x >= 84 && x <= 124 && y >=228 && y <=279) {
             this.sql += "0";
             bi = 0;
