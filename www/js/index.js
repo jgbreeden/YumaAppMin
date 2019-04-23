@@ -24,14 +24,13 @@ const CWIDTH = 1014; // 507;
 const CHEIGHT = 660; // 330;
 var bi = 0;
 
-var Btext = ["This is the code for building 1", 
-    "This is the code for building 2",
-    "This is the code for building 3",
-    "This is the code for building 4",
-    "This is the code for building 5",
-    "This is the code for building 6",
-    "This is the code for building 7",
-    "This is the code for the lawn"
+var Btext = ["The river’s transformation began with the construction of Laguna Dam, which became the first dam on the river, built 10 miles upstream from Yuma and completed in 1909.  ", 
+    "During the U.S. Army’s operation of the Yuma Quartermaster Depot between 1865 and 1883,the Storehouse held six months’ worth of Army supplies for all the military posts of Arizona Territory.  ",
+    "From here, the Quartermaster oversaw the arrival and distribution of supplies, the hiring and firing of civilian staff, and the payment of Army debts.  ",
+    "The home is built for comfort, with thick adobe walls that help keep the building cooler in the summertime and warmer in the wintertime. Next to the Quartermaster’s House is the detached kitchen and servant’s quarters.  Detached kitchens provided the dual benefits of keeping the heat from the kitchen stove out of the main house",
+    "In the deserts of Arizona, mules proved to be the Army’s animal of choice due to their ability to tolerate the desert heat.  From the Yuma Depot, mule-drawn wagon trains transported military supplies to the many Army posts of Arizona.",
+    "Prior to the dams, the river carried a large load of suspended sediment.Reservoirs forced this sediment to collect at the bottom, allowing the clear water at the top to be siphoned off for drinking. The Army built this reservoir to serve the Yuma Quartermaster Depot.",
+    "Call Them At AnyTime (928) 373-5198, Monday – Friday 8:00 am – 5:00 pm 180 West 1st Street, Suite E Yuma, AZ 85364"
     ]; 
     console.log(Btext[0]);
 
@@ -40,7 +39,6 @@ var Btitle = ["Info Center",
     "Quarter Masters Office",
     "Quarter master's house & kitchen",
     "Corral House",
-    "Reseviour",
     "Passenger Car",
     "Lawn"
     ];
