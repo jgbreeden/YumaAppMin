@@ -171,25 +171,25 @@ var app = {
         alert("img:" + mapimg.src + " x:" + x + " y:" + y);
         x = x * app.mapmult // * 1.3;
         y = y * app.mapmult // * 1.3;
-        if (x >= 84 && x <= 124 && y >=228 && y <=279) {
+        if (x >= 69 && x <= 126 && y >=213 && y <=261) {
             this.sql += "0";
             bi = 0;
-        }else if (x >= 191 && x <= 267 && y >= 98 && y <= 190){
+        }else if (x >= 168 && x <= 245 && y >= 83 && y <= 190){
             this.sql += "1";
             bi = 1;
-        }else if (x >= 283 && x <= 373 && y >= 99 && y <= 147){
+        }else if (x >= 250 && x <= 358 && y >= 87 && y <= 130){
             this.sql += "2";   
             bi = 2;
-        }else if (x >= 404 && x <= 467 && y >= 46 && y <= 106){
+        }else if (x >= 389 && x <= 482 && y >= 31 && y <= 121){
             this.sql += "3";   
             bi = 3;
-        }else if (x >= 142 && x <= 272 && y >= 258 && y <= 332){
+        }else if (x >= 127 && x <= 262 && y >= 250 && y <= 317){
             this.sql += "4";   
             bi = 4;
-        }else if (x >= 292 && x <= 330 && y >= 31 && y <= 69){
+        }else if (x >= 274 && x <= 325 && y >= 16 && y <= 60){
             this.sql += "5";   
             bi = 5;
-        }else if (x >= 127 && x <= 173 && y >= 87 && y <= 147){
+        }else if (x >= 112 && x <= 160 && y >= 72 && y <= 162){
             this.sql += "6";   
             bi = 6;
         } else {
