@@ -121,20 +121,6 @@ var app = {
     },
     
     mapmult: 0.5,
-
-    dbsuccess: function() {
-        //alert("copy success");
-        db = window.sqlitePlugin.openDatabase({name:"YumaApp.db", location: "default"});
-    },
-
-    dbfail: function(err) {
-        if(e.code == 516) {
-            db = window.sqlitePlugin.openDatabase({name:"YumaApp.db", location: "default"});
-        } else {
-            alert(e.message);
-        }
-    },
-
     // Update DOM on a Received Event
     receivedEvent: function(id) {
        
@@ -151,8 +137,7 @@ var app = {
 
     setImg: function() {
         
-        var setHeight = (window.innerHeight > window.innerWidth) ? window.innerWidth: window.innerHeight;
-        alert("width:" + window.innerWidth + " height:" + window.innerHeight);
+        var setHeight = (window.innerHeight > window.innerWidth) ? window.innerWidth: window.innerHeight
         var cvs = document.getElementById("canvas1");
         if (setHeight >= CHEIGHT + 10) {
             //cvs.width = CWIDTH;
@@ -189,7 +174,7 @@ var app = {
     getBuilding:function(x, y) {
 
         //this.sql = "SELECT * FROM buildings WHERE id=";
-        alert("img:" + mapimg.src + " x:" + x + " y:" + y);
+      
         x = x * app.mapmult // * 1.3;
         y = y * app.mapmult // * 1.3;
         if (x >= 69 && x <= 126 && y >=213 && y <=261) {
@@ -246,11 +231,7 @@ var app = {
         document.getElementById("p3text").innerText = result.rows.item(0).description;
         document.getElementById("pagename").innerText = result.rows.item(0).title;
     },
-
-    errData: function(err) {
-        alert("error:" + err.message + ":" + err.code);
-    },
-
+    
     playAudio1: function() {
         app.playAudio(Baudio1[bi]);
     },
