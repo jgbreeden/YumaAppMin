@@ -41,7 +41,6 @@ body {
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
     width:100%;
 }
 
@@ -97,8 +96,16 @@ h1 {
     color: ghostwhite;
 }
 
+#pagename{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+}
+
 #page1{
     background-color: rgba(86, 163, 86, 0.692);
+    background-image: url("../img/CRSHPhome.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     text-align: center;
 }
 
@@ -108,14 +115,23 @@ h1 {
     margin: auto;
 }
 
+#page3{
+    background-color: rgb(245, 238, 207)
+}
+
 #p3img {
     float: left;
     width: 45%;
     margin-right: 5%;
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgb(39, 66, 31);
 }
 
 #p3text {
     text-transform: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:black;
 }
 
 #p3btns {
@@ -137,4 +153,23 @@ h1 {
 }
 .panelBtn:link {
     color: black;
+}
+
+#panel {
+    text-transform: none;
+}
+
+.org {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.con {
+    text-align: center;
+    color: gray;
+    font-size: 10px;
+    line-height: 0px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }

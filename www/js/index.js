@@ -35,7 +35,8 @@ var Btext = ["This is the code for building 1",
     ]; 
     console.log(Btext[0]);
 
-var Btitle = ["Info Center","Storehouse",
+var Btitle = ["Info Center",
+    "Storehouse",
     "Quarter Masters Office",
     "Quarter master's house & kitchen",
     "Corral House",
@@ -51,23 +52,44 @@ var Bimage = ["img/vic.jpg", "img/storehouse2.jpg", "img/qmo.jpg",
     "img/lawn.jpg" 
     ];
     console.log(Bimage[0]);
+var BtnLabel1 = ["Where Does All the Water Go?",
+    "1880's",
+    "Quartermasters office",
+    "Quartermasters House",
+    "1880's",
+    "Weather Station",
+    "Introduction",
+    "Conclusion"
 
-var Baudio1 = ["audio/visitor1.wav","audio/store80's.wav",
+];
+var BtnLabel2 = ["Overlooking the grounds",
+    "1900's",
+    "",
+    "Quartermasters Kitchen",
+    "1900's",
+    "Water Resivior",
+    "",
+    ""
+
+];
+var Baudio1 = ["audio/visitor1.wav",
+    "audio/store80's.wav",
     "audio/office80's.wav",
     "audio/house80's.wav",
     "audio/corral80's.wav",
     "audio/resivoir80's.wav",
-    "audio/passanger1.wav",
-    "audio/passanger1.wav"
+    "audio/intro.wav",
+    "audio/conclusion.wav"
     ];
 
-var Baudio2 = ["audio/visitor2.wav","audio/store20's.wav",
+var Baudio2 = ["audio/visitor2.wav",
+    "audio/store20's.wav",
     "audio/office20's.wav",
     "audio/house20's.wav",
     "audio/corral20's.wav",
     "audio/resivoir20's.wav",
-    "audio/passanger2.wav",
-    "audio/passanger1.wav"
+    "",
+    ""
     ];
 
 var app = {
@@ -198,8 +220,15 @@ var app = {
         }
         document.getElementById("p3text").innerHTML = Btext[bi];
         document.getElementById("pagename").innerText = Btitle[bi];
-        document.getElementById("info").innerText = Btext[bi];
         document.getElementById("p3img").src = Bimage[bi];
+        document.getElementById("btn1").innerHTML = BtnLabel1[bi];
+        document.getElementById("btn2").innerHTML = BtnLabel2[bi];
+        if (document.getElementById("btn2").innerHTML==""){
+            document.getElementById("btn2").style.display = "none";
+        }else{
+            document.getElementById("btn2").style.display = "block";
+        }
+
         // document.getElementById("btn1").onclick = app.playAudio(Baudio1[i]);
         // document.getElementById("btn2").onclick = app.playAudio(Baudio2[i]);
         //document.getElementById("btn1").addEventListener("click", app.playAudio(Baudio1[i]));
