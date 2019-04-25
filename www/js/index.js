@@ -193,22 +193,22 @@ var app = {
         alert("img:" + mapimg.src + " x:" + x + " y:" + y);
         x = x * app.mapmult // * 1.3;
         y = y * app.mapmult // * 1.3;
-        if (x >= 69 && x <= 126 && y >=213 && y <=261) {
+        if (x >= 68 && x <= 126 && y >=213 && y <=261) {
             this.sql += "0";
             bi = 0;
         }else if (x >= 168 && x <= 245 && y >= 83 && y <= 190){
             this.sql += "1";
             bi = 1;
-        }else if (x >= 250 && x <= 358 && y >= 87 && y <= 130){
+        }else if (x >= 250 && x <= 350 && y >= 87 && y <= 130){
             this.sql += "2";   
             bi = 2;
-        }else if (x >= 389 && x <= 482 && y >= 31 && y <= 121){
+        }else if (x >= 370 && x <= 445 && y >= 31 && y <= 121){
             this.sql += "3";   
             bi = 3;
         }else if (x >= 127 && x <= 262 && y >= 250 && y <= 317){
             this.sql += "4";   
             bi = 4;
-        }else if (x >= 274 && x <= 325 && y >= 16 && y <= 60){
+        }else if (x >= 265 && x <= 305 && y >= 20 && y <= 65){
             this.sql += "5";   
             bi = 5;
         }else if (x >= 112 && x <= 160 && y >= 72 && y <= 162){
