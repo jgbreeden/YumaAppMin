@@ -230,7 +230,7 @@ var app = {
 
         }else if (x >= 20 && x <= 68 && y >= 180 && y <= 235 ){ 
             this.sql += "9";
-            bi = 7;
+            bi = 9;
         }else if (x >= 20 && x <= 68 && y >= 72 && y <= 127 ){ 
             this.sql += "8";
             bi = 8;
