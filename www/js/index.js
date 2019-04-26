@@ -36,8 +36,8 @@ var Btext = ["The river’s transformation began with the construction of Laguna
 
 var Btitle = ["Info Center",
     "Storehouse",
-    "Quarter Masters Office",
-    "Quarter master's house & kitchen",
+    "Quartermaster's Office",
+    "Quartermaster's house & kitchen",
     "Corral House",
     "Reseviour",
     "Passenger Car",
@@ -51,10 +51,11 @@ var Bimage = ["img/vic.jpg", "img/storehouse2.jpg", "img/qmo.jpg",
     "img/lawn.jpg" 
     ];
     console.log(Bimage[0]);
+
 var BtnLabel1 = ["Where Does All the Water Go?",
     "1880's",
-    "Quartermasters office",
-    "Quartermasters House",
+    "Quartermaster's office",
+    "Quartermaster's House",
     "1880's",
     "Weather Station",
     "Introduction",
@@ -64,7 +65,7 @@ var BtnLabel1 = ["Where Does All the Water Go?",
 var BtnLabel2 = ["Overlooking the grounds",
     "1900's",
     "",
-    "Quartermasters Kitchen",
+    "Quartermaster's Kitchen",
     "1900's",
     "Water Resivior",
     "",
