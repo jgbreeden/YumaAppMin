@@ -44,6 +44,9 @@ body {
     width:100%;
 }
 
+#pfooter {
+    height: 5px;
+}
 
 
 /* Landscape layout (with min-width) */
@@ -134,9 +137,13 @@ h1 {
     color:black;
 }
 
-#p3btns {
+#mapbutton{
     float: right;
-    width: 50%;
+}
+
+#p3btns {
+    float: left;
+    width: 45%;
 }
 
 .panelBtn {
