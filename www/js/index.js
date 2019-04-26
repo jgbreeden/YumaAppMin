@@ -27,7 +27,7 @@ var bi = 0;
 var Btext = ["The river’s transformation began with the construction of Laguna Dam, which became the first dam on the river, built 10 miles upstream from Yuma and completed in 1909.  ", 
     "During the U.S. Army’s operation of the Yuma Quartermaster Depot between 1865 and 1883,the Storehouse held six months’ worth of Army supplies for all the military posts of Arizona Territory.  ",
     "From here, the Quartermaster oversaw the arrival and distribution of supplies, the hiring and firing of civilian staff, and the payment of Army debts.  ",
-    "The home is built for comfort, with thick adobe walls that help keep the building cooler in the summertime and warmer in the wintertime. Next to the Quartermaster’s House is the detached kitchen and servant’s quarters.  Detached kitchens provided the dual benefits of keeping the heat from the kitchen stove out of the main house",
+    "The home is built for comfort, with thick adobe walls that help keep the building cooler in the summertime and warmer in the wintertime. Next to the Quartermaster’s House is the detached kitchen and servant’s quarters.",
     "In the deserts of Arizona, mules proved to be the Army’s animal of choice due to their ability to tolerate the desert heat.  From the Yuma Depot, mule-drawn wagon trains transported military supplies to the many Army posts of Arizona.",
     "Prior to the dams, the river carried a large load of suspended sediment.Reservoirs forced this sediment to collect at the bottom, allowing the clear water at the top to be siphoned off for drinking. The Army built this reservoir to serve the Yuma Quartermaster Depot.",
     "Call Them At AnyTime (928) 373-5198, Monday – Friday 8:00 am – 5:00 pm 180 West 1st Street, Suite E Yuma, AZ 85364"
@@ -36,12 +36,15 @@ var Btext = ["The river’s transformation began with the construction of Laguna
 
 var Btitle = ["Info Center",
     "Storehouse",
-    "Quarter Masters Office",
-    "Quarter master's house & kitchen",
+    "Quartermaster's Office",
+    "Quartermaster's house & kitchen",
     "Corral House",
     "Reseviour",
     "Passenger Car",
-    "Lawn"
+    "Lawn",
+    "Introduction",
+    "Conclusion",
+    "River Siphon"
     ];
     console.log(Btitle[0]);
 
@@ -51,24 +54,31 @@ var Bimage = ["img/vic.jpg", "img/storehouse2.jpg", "img/qmo.jpg",
     "img/lawn.jpg" 
     ];
     console.log(Bimage[0]);
+
 var BtnLabel1 = ["Where Does All the Water Go?",
     "1880's",
-    "Quartermasters office",
-    "Quartermasters House",
+    "Quartermaster's office",
+    "Quartermaster's House",
     "1880's",
     "Weather Station",
+    "",
+    "",
     "Introduction",
-    "Conclusion"
+    "Conclusion",
+    "Colorado River Siphon"
 
 ];
 var BtnLabel2 = ["Overlooking the grounds",
     "1900's",
     "",
-    "Quartermasters Kitchen",
+    "Quartermaster's Kitchen",
     "1900's",
     "Water Resivior",
     "",
-    ""
+    "",
+    "",
+    "",
+    "Yuma Irrigation Project"
 
 ];
 var Baudio1 = ["audio/visitor1.wav",
@@ -77,8 +87,11 @@ var Baudio1 = ["audio/visitor1.wav",
     "audio/house80's.wav",
     "audio/corral80's.wav",
     "audio/resivoir80's.wav",
+    "",
+    "",
     "audio/intro.wav",
-    "audio/conclusion.wav"
+    "audio/conclusion.wav",
+    "audion/River_Siphen80's.wav"
     ];
 
 var Baudio2 = ["audio/visitor2.wav",
@@ -88,7 +101,10 @@ var Baudio2 = ["audio/visitor2.wav",
     "audio/corral20's.wav",
     "audio/resivoir20's.wav",
     "",
-    ""
+    "",
+    "",
+    "",
+    "audion/River_Siphen20's.wav"
     ];
 
 var app = {
@@ -190,22 +206,22 @@ var app = {
         //this.sql = "SELECT * FROM buildings WHERE id=";
         x = x * app.mapmult // * 1.3;
         y = y * app.mapmult // * 1.3;
-        if (x >= 68 && x <= 126 && y >=213 && y <=261) {
+        if (x >= 69 && x <= 126 && y >=213 && y <=261) {
             this.sql += "0";
             bi = 0;
         }else if (x >= 168 && x <= 245 && y >= 83 && y <= 190){
             this.sql += "1";
             bi = 1;
-        }else if (x >= 250 && x <= 350 && y >= 87 && y <= 130){
+        }else if (x >= 250 && x <= 358 && y >= 87 && y <= 130){
             this.sql += "2";   
             bi = 2;
-        }else if (x >= 370 && x <= 445 && y >= 31 && y <= 121){
+        }else if (x >= 389 && x <= 482 && y >= 31 && y <= 121){
             this.sql += "3";   
             bi = 3;
         }else if (x >= 127 && x <= 262 && y >= 250 && y <= 317){
             this.sql += "4";   
             bi = 4;
-        }else if (x >= 265 && x <= 305 && y >= 20 && y <= 65){
+        }else if (x >= 274 && x <= 325 && y >= 16 && y <= 60){
             this.sql += "5";   
             bi = 5;
         }else if (x >= 110 && x <= 160 && y >= 72 && y <= 162){
@@ -231,6 +247,11 @@ var app = {
         document.getElementById("p3img").src = Bimage[bi];
         document.getElementById("btn1").innerHTML = BtnLabel1[bi];
         document.getElementById("btn2").innerHTML = BtnLabel2[bi];
+        if (document.getElementById("btn1").innerHTML==""){
+            document.getElementById("btn1").style.display = "none";
+        }else{
+            document.getElementById("btn1").style.display = "block";
+        }
         if (document.getElementById("btn2").innerHTML==""){
             document.getElementById("btn2").style.display = "none";
         }else{
