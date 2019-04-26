@@ -152,7 +152,6 @@ var app = {
     setImg: function() {
         
         var setHeight = (window.innerHeight > window.innerWidth) ? window.innerWidth: window.innerHeight;
-        alert("width:" + window.innerWidth + " height:" + window.innerHeight);
         var cvs = document.getElementById("canvas1");
         if (setHeight >= CHEIGHT + 10) {
             //cvs.width = CWIDTH;
@@ -189,7 +188,6 @@ var app = {
     getBuilding:function(x, y) {
 
         //this.sql = "SELECT * FROM buildings WHERE id=";
-        alert("img:" + mapimg.src + " x:" + x + " y:" + y);
         x = x * app.mapmult // * 1.3;
         y = y * app.mapmult // * 1.3;
         if (x >= 68 && x <= 126 && y >=213 && y <=261) {
@@ -210,10 +208,21 @@ var app = {
         }else if (x >= 265 && x <= 305 && y >= 20 && y <= 65){
             this.sql += "5";   
             bi = 5;
-        }else if (x >= 112 && x <= 160 && y >= 72 && y <= 162){
+        }else if (x >= 110 && x <= 160 && y >= 72 && y <= 162){
             this.sql += "6";   
             bi = 6;
-        } else {
+
+        }else if (x >= 20 && x <= 68 && y >= 180 && y <= 235 ){ 
+            this.sql += "9";
+            bi = 7;
+        }else if (x >= 20 && x <= 68 && y >= 72 && y <= 127 ){ 
+            this.sql += "8";
+            bi = 8;
+        }else if (x >= 400 && x <= 435 && y >= 210 && y <= 240 ){ 
+            this.sql += "10";
+            bi = 10;
+
+        }else {
             this.sql += "7";
             bi = 7
         }
