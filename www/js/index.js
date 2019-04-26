@@ -51,9 +51,11 @@ var Btitle = ["Info Center",
 var Bimage = ["img/vic.jpg", "img/storehouse2.jpg", "img/qmo.jpg",
     "img/kitchen.jpg", "img/ch.jpg",   
     "img/river.jpg", "img/pscar.jpg",
-    "img/lawn.jpg" 
+    "img/lawn.jpg",
+    "img/CRSHPstart.jpg",
+    "img/CRSHPend.jpg" 
     ];
-    console.log(Bimage[0]);
+    //console.log(Bimage[0]);
 
 var BtnLabel1 = ["Where Does All the Water Go?",
     "1880's",
