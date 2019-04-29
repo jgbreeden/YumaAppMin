@@ -30,7 +30,11 @@ var Btext = ["The river’s transformation began with the construction of Laguna
     "The home is built for comfort, with thick adobe walls that help keep the building cooler in the summertime and warmer in the wintertime. Next to the Quartermaster’s House is the detached kitchen and servant’s quarters.",
     "In the deserts of Arizona, mules proved to be the Army’s animal of choice due to their ability to tolerate the desert heat.  From the Yuma Depot, mule-drawn wagon trains transported military supplies to the many Army posts of Arizona.",
     "Prior to the dams, the river carried a large load of suspended sediment.Reservoirs forced this sediment to collect at the bottom, allowing the clear water at the top to be siphoned off for drinking. The Army built this reservoir to serve the Yuma Quartermaster Depot.",
-    "Call Them At AnyTime (928) 373-5198, Monday – Friday 8:00 am – 5:00 pm 180 West 1st Street, Suite E Yuma, AZ 85364"
+    "To book an event at the Colorado River State Historic Park, please contact Teri Ingram at 928-373-5196.",
+    "",
+    "The park is open 7 days per week from 9:00 am to 4:30 pm. The phone number is 928-783-0071.",
+    "The administrative office is located at 180 West 1st Street, Suite E, Yuma, AZ 85364. The are open Monday through Friday, 8:00 am to 5:00 pm. You can call anytime at 928-373-5198, or email at yumacrossing@yumaaz.gov",
+    "The Colorado River Siphon routes the Yuma Canal under the Colorado River, from the California side to the Arizona side."
     ]; 
     console.log(Btext[0]);
 
@@ -53,34 +57,35 @@ var Bimage = ["img/vic.jpg", "img/storehouse2.jpg", "img/qmo.jpg",
     "img/river.jpg", "img/pscar.jpg",
     "img/lawn.jpg",
     "img/CRSHPstart.jpg",
-    "img/CRSHPend.jpg" 
+    "img/CRSHPend.jpg",
+    "img/siphon.jpg" 
     ];
     //console.log(Bimage[0]);
 
-var BtnLabel1 = ["Where Does All the Water Go?",
-    "1880's",
-    "Quartermaster's office",
-    "Quartermaster's House",
-    "1880's",
-    "Weather Station",
+var BtnLabel1 = ["Where Does All the Water Go? &#128266;",
+    "1880's &#128266;",
+    "Quartermaster's office &#128266;",
+    "Quartermaster's House &#128266;",
+    "1880's &#128266;",
+    "Weather Station &#128266;",
     "",
     "",
-    "Introduction",
-    "Conclusion",
-    "Colorado River Siphon"
+    "Introduction  &#128266;",
+    "Conclusion &#128266;",
+    "Colorado River Siphon &#128266;"
 
 ];
-var BtnLabel2 = ["Overlooking the grounds",
-    "1900's",
+var BtnLabel2 = ["Overlooking the grounds &#128266;",
+    "1900's &#128266;",
     "",
-    "Quartermaster's Kitchen",
-    "1900's",
-    "Water Resivior",
-    "",
-    "",
+    "Quartermaster's Kitchen &#128266;",
+    "1900's &#128266;",
+    "Water Resivior &#128266;",
     "",
     "",
-    "Yuma Irrigation Project"
+    "",
+    "",
+    "Yuma Irrigation Project &#128266;"
 
 ];
 var Baudio1 = ["audio/visitor1.wav",
