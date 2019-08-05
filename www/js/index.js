@@ -23,34 +23,35 @@ var db;
 const CWIDTH = 1014; // 507;
 const CHEIGHT = 660; // 330;
 var bi = 0;
+var my_media = null;
 
 var Btext = ["The river’s transformation began with the construction of Laguna Dam, which became the first dam on the river, built 10 miles upstream from Yuma and completed in 1909.  ", 
     "During the U.S. Army’s operation of the Yuma Quartermaster Depot between 1865 and 1883,the Storehouse held six months’ worth of Army supplies for all the military posts of Arizona Territory.  ",
     "From here, the Quartermaster oversaw the arrival and distribution of supplies, the hiring and firing of civilian staff, and the payment of Army debts.  ",
     "The home is built for comfort, with thick adobe walls that help keep the building cooler in the summertime and warmer in the wintertime. Next to the Quartermaster’s House is the detached kitchen and servant’s quarters.",
     "In the deserts of Arizona, mules proved to be the Army’s animal of choice due to their ability to tolerate the desert heat.  From the Yuma Depot, mule-drawn wagon trains transported military supplies to the many Army posts of Arizona.",
-    "Prior to the dams, the river carried a large load of suspended sediment.Reservoirs forced this sediment to collect at the bottom, allowing the clear water at the top to be siphoned off for drinking. The Army built this reservoir to serve the Yuma Quartermaster Depot.",
+    "Prior to the dams, the river carried a large load of suspended sediment. Reservoirs forced this sediment to collect at the bottom, allowing the clear water at the top to be siphoned off for drinking.",
     "To book an event at the Colorado River State Historic Park, please contact Teri Ingram at 928-373-5196.",
     "",
     "The park is open 7 days per week from 9:00 am to 4:30 pm. The phone number is 928-783-0071.",
-    "The administrative office is located at 180 West 1st Street, Suite E, Yuma, AZ 85364. The are open Monday through Friday, 8:00 am to 5:00 pm. You can call anytime at 928-373-5198, or email at yumacrossing@yumaaz.gov",
+    "The administrative office is located at 180 West 1st Street, Suite E, Yuma, AZ 85364. They are open Monday through Friday, 8:00 am to 5:00 pm. You can call anytime at 928-373-5198, or email at yumacrossing@yumaaz.gov",
     "The Colorado River Siphon routes the Yuma Canal under the Colorado River, from the California side to the Arizona side."
     ]; 
-    console.log(Btext[0]);
+    //console.log(Btext[0]);
 
 var Btitle = ["Info Center",
     "Storehouse",
     "Quartermaster's Office",
     "Quartermaster's house & kitchen",
     "Corral House",
-    "Reseviour",
+    "Reservoir",
     "Passenger Car",
     "Lawn",
     "Introduction",
     "Conclusion",
     "River Siphon"
     ];
-    console.log(Btitle[0]);
+    //console.log(Btitle[0]);
 
 var Bimage = ["img/vic.jpg", "img/storehouse2.jpg", "img/qmo.jpg",
     "img/kitchen.jpg", "img/ch.jpg",   
@@ -80,7 +81,7 @@ var BtnLabel2 = ["Overlooking the grounds &#128266;",
     "",
     "Quartermaster's Kitchen &#128266;",
     "1900's &#128266;",
-    "Water Resivior &#128266;",
+    "Water Reservoir &#128266;",
     "",
     "",
     "",
@@ -88,30 +89,30 @@ var BtnLabel2 = ["Overlooking the grounds &#128266;",
     "Yuma Irrigation Project &#128266;"
 
 ];
-var Baudio1 = ["audio/visitor1.wav",
-    "audio/store80's.wav",
-    "audio/office80's.wav",
-    "audio/house80's.wav",
-    "audio/corral80's.wav",
-    "audio/resivoir80's.wav",
+var Baudio1 = ["/android_asset/www/audio/vic.mp3",
+    "/android_asset/www/audio/store1880.mp3",
+    "/android_asset/www/audio/qmoffice.mp3",
+    "/android_asset/www/audio/qmhouse.mp3",
+    "/android_asset/www/audio/corral1880.mp3",
+    "/android_asset/www/audio/weather.mp3",
     "",
     "",
-    "audio/intro.wav",
-    "audio/conclusion.wav",
-    "audion/River_Siphen80's.wav"
+    "/android_asset/www/audio/introduction.mp3",
+    "/android_asset/www/audio/conclusion.mp3",
+    "/android_asset/www/audio/riversiphon.mp3"
     ];
 
-var Baudio2 = ["audio/visitor2.wav",
-    "audio/store20's.wav",
-    "audio/office20's.wav",
-    "audio/house20's.wav",
-    "audio/corral20's.wav",
-    "audio/resivoir20's.wav",
+var Baudio2 = ["/android_asset/www/audio/porch.mp3",
+    "/android_asset/www/audio/store1900.mp3",
+    "",
+    "/android_asset/www/audio/qmkitchen.mp3",
+    "/android_asset/www/audio/corral1900.mp3",
+    "/android_asset/www/audio/reservoir.mp3",
     "",
     "",
     "",
     "",
-    "audion/River_Siphen20's.wav"
+    "/android_asset/www/audio/irrigation.mp3"
     ];
 
 var app = {
@@ -136,6 +137,8 @@ var app = {
         });
         document.getElementById("btn1").addEventListener("click", app.playAudio1);
         document.getElementById("btn2").addEventListener("click", app.playAudio2);
+        document.getElementById("mapbutton").addEventListener("click", app.stopMedia);
+        document.getElementById("homebutton").addEventListener("click", app.stopMedia);
         // window.addEventListener("orientationchange", function (){
         //     app.setImg();
         //     app.loadImage();
@@ -161,7 +164,7 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
        
-        console.log('Received Event: ' + id);
+        //console.log('Received Event: ' + id);
     },
 
     loadImage: function() {
@@ -181,13 +184,13 @@ var app = {
             //cvs.height = cvs.width * 0.65; // "auto";
             mapimg.src = "img/park_hdpi.jpg";
             app.mapmult = 0.5;
-            console.log("high");
+            //console.log("high");
         } else {//} if (setHeight >= CHEIGHT * 0.62) {
             //cvs.width = CWIDTH * 0.60;
             //cvs.height = cvs.width * 0.65; // "auto";
             mapimg.src = "img/park_mdpi.jpg";
             app.mapmult = 0.78;
-            console.log("med");
+            //console.log("med");
         //} else {
             //cvs.width = CWIDTH * 0.5;
             //cvs.height = cvs.width * 0.65; // "auto";
@@ -271,7 +274,7 @@ var app = {
         //document.getElementById("btn2").addEventListener("click", app.playAudio(Baudio2[i]));
 
         //db.transaction(this.getSql, this.errData, app.showData);
-        console.log(x + "-" + y)
+        //console.log(x + "-" + y)
     }, 
              
     getSql: function(tx) {
@@ -296,12 +299,18 @@ var app = {
     },
     
     playAudio: function(src) {
-        var my_media = null;
+        app.stopMedia();        
         my_media = new Media(src);
         my_media.play();
-    }
+    },
  
-
+    stopMedia: function() {
+        if (my_media) {
+            my_media.stop();
+            my_media.release();
+            my_media = null;
+        }
+    }
 };
 
 app.initialize();
