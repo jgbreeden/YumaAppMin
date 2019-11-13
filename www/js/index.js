@@ -33,8 +33,11 @@ var Btext = ["The river’s transformation began with the construction of Laguna
     "Prior to the dams, the river carried a large load of suspended sediment. Reservoirs forced this sediment to collect at the bottom, allowing the clear water at the top to be siphoned off for drinking.",
     "To book an event at the Colorado River State Historic Park, please contact Teri Ingram at 928-373-5196.",
     "",
-    "The park is open 7 days per week October - May and Tuesday through Sunday June - September from 9:00 am to 4:30 pm . The phone number is 928-783-0071.",
-    "The Yuma Crossing National Heritage Area administrative office is located at 180 West 1st Street, Suite E, Yuma, AZ 85364. They are open Monday through Friday, 8:00 am to 5:00 pm. You can call anytime at 928-373-5198, or email at yumacrossing@yumaaz.gov",
+    "<div style='font-size: 12px;'>Park Hours and Phone: 928-783-0071" +
+    "<ul><li>October - May: Open 7 days a week, 9:00 am to 4:30 pm</li><li>June - September: Open Tuesday through Sunday, 9:00 am to 4:30 pm</li></ul></div>" +
+    "<div style='font-size: 12px;'>Yuma Crossing National Heritage Area administrative office:" +
+    "<ul><li>Location: 180 West 1st Street, Suite E, Yuma, AZ 85364</li><li>Open Monday through Friday, 8:00 am to 5:00 pm</li><li>Call anytime at 928-373-5198, or email at yumacrossing@yumaaz.gov </li></ul></div>",
+    "",
     "The Colorado River Siphon routes the Yuma Canal under the Colorado River, from the California side to the Arizona side."
     ]; 
     //console.log(Btext[0]);
@@ -72,7 +75,7 @@ var BtnLabel1 = ["Where Does All the Water Go? &#128266;",
     "",
     "",
     "Introduction  &#128266;",
-    "Conclusion &#128266;",
+    "",
     "Colorado River Siphon &#128266;"
 
 ];
@@ -84,7 +87,7 @@ var BtnLabel2 = ["Overlooking the grounds &#128266;",
     "Water Reservoir &#128266;",
     "",
     "",
-    "",
+    "Conclusion &#128266;",
     "",
     "Yuma Irrigation Project &#128266;"
 
@@ -98,7 +101,7 @@ var Baudio1 = ["/android_asset/www/audio/vic.mp3",
     "",
     "",
     "/android_asset/www/audio/introduction.mp3",
-    "/android_asset/www/audio/conclusion.mp3",
+    "",
     "/android_asset/www/audio/riversiphon.mp3"
     ];
 
@@ -110,7 +113,7 @@ var Baudio2 = ["/android_asset/www/audio/porch.mp3",
     "/android_asset/www/audio/reservoir.mp3",
     "",
     "",
-    "",
+    "/android_asset/www/audio/conclusion.mp3",
     "",
     "/android_asset/www/audio/irrigation.mp3"
     ];
@@ -215,8 +218,10 @@ var app = {
 
         //this.sql = "SELECT * FROM buildings WHERE id=";
         x = x * app.mapmult // * 1.3;
-        y = y * app.mapmult // * 1.3;
-        if (x >= 69 && x <= 126 && y >=213 && y <=261) {
+        y = y * app.mapmult // * 1.3;\
+        console.log(x + "," + y)
+        if (x >= 80 && x <= 126 && y >=213 && y <=261) {
+            console.log("info center");
             this.sql += "0";
             bi = 0;
         }else if (x >= 168 && x <= 245 && y >= 83 && y <= 190){
@@ -238,17 +243,23 @@ var app = {
             this.sql += "6";   
             bi = 6;
 
-        }else if (x >= 20 && x <= 68 && y >= 180 && y <= 235 ){ 
+/*         }else if (x >= 20 && x <= 68 && y >= 180 && y <= 235 ){ 
+            //big buttons
+            console.log("End Button");
             this.sql += "9";
-            bi = 9;
-        }else if (x >= 20 && x <= 68 && y >= 72 && y <= 127 ){ 
+            bi = 9; */
+        }else if (x >= 20 && x <= 79 && y >= 210 && y <= 275 ){ 
+            //replace this big button with small button
+            console.log("Start button hopefully");
             this.sql += "8";
             bi = 8;
         }else if (x >= 400 && x <= 435 && y >= 210 && y <= 240 ){ 
+            //console.log("river siphon");
             this.sql += "10";
             bi = 10;
 
         }else {
+            //"Lawn"
             this.sql += "7";
             bi = 7
         }
