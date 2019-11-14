@@ -173,7 +173,7 @@ var app = {
     loadImage: function() {
         //var cvs = document.getElementById("canvas1");
         var ctx = document.getElementById("canvas1").getContext("2d");
-        ctx.drawImage(mapimg, 0, 0, 507, 330);
+        ctx.drawImage(mapimg, 0, 0);
         screen.orientation.lock("landscape");
         //console.log(CWIDTH * app.mapmult);
     },
@@ -183,23 +183,23 @@ var app = {
         var setHeight = (window.innerHeight > window.innerWidth) ? window.innerWidth: window.innerHeight;
         var cvs = document.getElementById("canvas1");
         if (setHeight >= CHEIGHT + 10) {
-            //cvs.width = CWIDTH;
-            //cvs.height = cvs.width * 0.65; // "auto";
+            cvs.width = CWIDTH;
+            cvs.height = cvs.width * 0.65; // "auto";
             mapimg.src = "img/park_hdpi.jpg";
             app.mapmult = 0.5;
-            //console.log("high");
-        } else {//} if (setHeight >= CHEIGHT * 0.62) {
-            //cvs.width = CWIDTH * 0.60;
-            //cvs.height = cvs.width * 0.65; // "auto";
+            console.log("high");
+        } else if (setHeight >= CHEIGHT * 0.55) {
+            cvs.width = CWIDTH * 0.60;
+            cvs.height = cvs.width * 0.65; // "auto";
             mapimg.src = "img/park_mdpi.jpg";
             app.mapmult = 0.78;
-            //console.log("med");
-        //} else {
-            //cvs.width = CWIDTH * 0.5;
-            //cvs.height = cvs.width * 0.65; // "auto";
-            //mapimg.src = "img/park_ldpi.jpg";
-            //app.mapmult = 1.0;
-            //console.log("low");
+            console.log("med");
+        } else {
+            cvs.width = CWIDTH * 0.5;
+            cvs.height = cvs.width * 0.65; // "auto";
+            mapimg.src = "img/park_ldpi.jpg";
+            app.mapmult = 1.0;
+            console.log("low");
         }
         
         //mapimg.width = cvs.width;

@@ -59,6 +59,18 @@ body {
     }
 }
 
+#logo {
+    width:80%; 
+    height:auto; 
+    margin-top: -20px;
+}
+
+@media screen and (max-height:450px) {
+    #logo {
+        width:40%; 
+
+    }    
+}
 h1 {
     font-size:24px;
     font-weight:normal;
@@ -66,30 +78,6 @@ h1 {
     overflow:visible;
     padding:0px;
     text-align:center;
-}
-
-#canvas1 {
-    width: 1014px;
-    height: 660px;
-    margin: auto;
-    border: 1px solid black;
-}
-
-@media screen and (max-height:396px) {
-    #canvas1 {
-        width: 507px;
-        height: 330px;
-        border: 1px solid blue;
-    }
-}
-@media screen and (max-height:660px) {
-
-    #canvas1 {
-        width: 609px;
-        height: 396px; 
-        margin: auto;
-        border: 1px solid green;
-    }
 }
 
 
