@@ -129,6 +129,7 @@ var app = {
         //window.plugins.sqlDB.copy("YumaApp.db", 0, app.dbsuccess, app.dbfail);
         this.setImg();
         //load image to canvas when they click on the QMD button
+        document.addEventListener("backbutton", this.onBackButtonClicked, false);
 		document.getElementById("maplink").addEventListener("click", this.loadImage);
         document.getElementById("canvas1").addEventListener("click", function(e) {
             //if(mapimg.src = "img/park_ldpi.jpg") {
@@ -140,8 +141,8 @@ var app = {
         });
         document.getElementById("btn1").addEventListener("click", app.playAudio1);
         document.getElementById("btn2").addEventListener("click", app.playAudio2);
-        document.getElementById("mapbutton").addEventListener("click", app.stopMedia);
-        document.getElementById("homebutton").addEventListener("click", app.stopMedia);
+        document.getElementById("mapbutton").addEventListener("click", app.stopDetail);
+        document.getElementById("homebutton").addEventListener("click", app.stopDetail);
         // window.addEventListener("orientationchange", function (){
         //     app.setImg();
         //     app.loadImage();
@@ -302,6 +303,12 @@ var app = {
         alert("error:" + err.message + ":" + err.code);
     },
 
+    onBackButtonClicked: function() {
+        if(window.location = "#page2") {
+            screen.orientation.unlock();
+        }
+    },
+
     playAudio1: function() {
         app.playAudio(Baudio1[bi]);
     },
@@ -310,17 +317,18 @@ var app = {
     },
     
     playAudio: function(src) {
-        app.stopMedia();        
+        app.stopDetail();        
         my_media = new Media(src);
         my_media.play();
     },
  
-    stopMedia: function() {
+    stopDetail: function() {
         if (my_media) {
             my_media.stop();
             my_media.release();
             my_media = null;
         }
+        screen.orientation.unlock();
     }
 };
 
