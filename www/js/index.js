@@ -82,7 +82,7 @@ var BtnLabel1 = ["Where Does All the Water Go? &#128266;",
 var BtnLabel2 = ["Overlooking the grounds &#128266;",
     "1900s &#128266;",
     "Weather Station &#128266;",
-    "Quartermaster's Kitchen and Servant's Quarters &#128266;",
+    "Quartermaster's Kitchen and <br> Servant's Quarters &#128266;",
     "1900s &#128266;",
     "",
     "",
@@ -306,6 +306,8 @@ var app = {
     onBackButtonClicked: function() {
         if(window.location = "#page2") {
             screen.orientation.unlock();
+        }else if(window.location = "#page3") {
+            screen.orientation.lock("landscape");
         }
     },
 
