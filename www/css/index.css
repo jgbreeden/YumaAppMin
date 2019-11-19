@@ -134,6 +134,16 @@ h1 {
     width: 45%;
 }
 
+@media screen and (orientation: portrait) {
+    #p3img{
+        width: 90%;
+    }
+
+    #p3btns{
+        width: 90%;
+    }
+}
+
 .panelBtn {
     background-color: #4CAF50;
     border-color: rgb(41, 128, 41);
