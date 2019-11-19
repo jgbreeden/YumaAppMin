@@ -142,6 +142,7 @@ var app = {
         document.getElementById("btn1").addEventListener("click", app.playAudio1);
         document.getElementById("btn2").addEventListener("click", app.playAudio2);
         document.getElementById("mapbutton").addEventListener("click", app.stopDetail);
+        document.getElementById("mapbutton").addEventListener("click", app.lockOrientation);
         document.getElementById("homebutton").addEventListener("click", app.stopDetail);
         // window.addEventListener("orientationchange", function (){
         //     app.setImg();
@@ -202,7 +203,6 @@ var app = {
             app.mapmult = 1.0;
             console.log("low");
         }
-        
         //mapimg.width = cvs.width;
         //mapimg.height = cvs.height;
         // if (window.innerWidth >= 940) {
@@ -279,7 +279,7 @@ var app = {
         }else{
             document.getElementById("btn2").style.display = "block";
         }
-
+        screen.orientation.unlock();
         // document.getElementById("btn1").onclick = app.playAudio(Baudio1[i]);
         // document.getElementById("btn2").onclick = app.playAudio(Baudio2[i]);
         //document.getElementById("btn1").addEventListener("click", app.playAudio(Baudio1[i]));
@@ -328,7 +328,10 @@ var app = {
             my_media.release();
             my_media = null;
         }
-        screen.orientation.unlock();
+    },
+
+    lockOrientation: function() {
+        screen.orientation.lock("landscape");
     }
 };
 
