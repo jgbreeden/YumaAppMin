@@ -189,19 +189,19 @@ var app = {
             cvs.height = cvs.width * 0.65; // "auto";
             mapimg.src = "img/park_hdpi.jpg";
             app.mapmult = 0.5;
-            console.log("high");
+            //console.log("high");
         } else if (setHeight >= CHEIGHT * 0.55) {
             cvs.width = CWIDTH * 0.60;
             cvs.height = cvs.width * 0.65; // "auto";
             mapimg.src = "img/park_mdpi.jpg";
             app.mapmult = 0.78;
-            console.log("med");
+            //console.log("med");
         } else {
             cvs.width = CWIDTH * 0.5;
             cvs.height = cvs.width * 0.65; // "auto";
             mapimg.src = "img/park_ldpi.jpg";
             app.mapmult = 1.0;
-            console.log("low");
+            //console.log("low");
         }
         //mapimg.width = cvs.width;
         //mapimg.height = cvs.height;
@@ -220,9 +220,8 @@ var app = {
         //this.sql = "SELECT * FROM buildings WHERE id=";
         x = x * app.mapmult // * 1.3;
         y = y * app.mapmult // * 1.3;\
-        console.log(x + "," + y)
         if (x >= 80 && x <= 126 && y >=213 && y <=261) {
-            console.log("info center");
+            //console.log("info center");
             this.sql += "0";
             bi = 0;
         }else if (x >= 168 && x <= 245 && y >= 83 && y <= 190){
@@ -251,10 +250,9 @@ var app = {
             bi = 9; */
         }else if (x >= 20 && x <= 79 && y >= 210 && y <= 275 ){ 
             //replace this big button with small button
-            console.log("Start button hopefully");
             this.sql += "8";
             bi = 8;
-        }else if (x >= 400 && x <= 435 && y >= 210 && y <= 240 ){ 
+        }else if (x >= 400 && x <= 450 && y >= 210 && y <= 240 ){ 
             //console.log("river siphon");
             this.sql += "10";
             bi = 10;
@@ -304,11 +302,13 @@ var app = {
     },
 
     onBackButtonClicked: function() {
-        if(window.location = "#page2") {
+        console.log(window.location);
+        if(window.location.href.substr(-6) == "#page2") {
             screen.orientation.unlock();
-        }else if(window.location = "#page3") {
+        }else if(window.location == "#page3") {
             screen.orientation.lock("landscape");
         }
+        window.history.back();
     },
 
     playAudio1: function() {
