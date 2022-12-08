@@ -60,6 +60,7 @@
 			<div class="ui-content">
 				<img src="img/logo.png" id="logo"></img>
 				<a data-role="button" href="#page2" data-rel="page" id="maplink">Colorado River State <br> Historic Park Map</a>
+				<a data-role="button" href="#page4" data-rel="page" id="ewlink">East Wetlands <br> Park Map</a>
 				<a href="#panel" class="panelBtn">About</a>
 			</div><!-- /content -->
 		</div><!-- /page -->
@@ -114,7 +115,22 @@
 			</div>
 			<!-- end page 3 footer -->
 		</div>
-		<!-- end page 3 -->
+		<div data-role="page" id="page4">
+			<div class="ui-content">
+				<canvas id="canvas2" width="1048" height="903"></canvas>
+			</div>
+			<div id="p4btn">
+				<a data-role="button" id="btn4">Where am I</a>
+			</div>
+		</div>
+		<div data-role="page" id="page5">
+			<div data-role="header">
+				<a data-role="button" href="#page1" data-rel="page" id="homebutton">Home</a>
+				<h1 id="page5name">Page 5</h1>
+				<a data-role="button" href="#page4" id="mapbutton">Map</a>
+			</div>
+		</div>	
+		<!-- end page 5 -->
 		<script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script>
 		<script type="text/javascript" id="jqm-trans-disable">

@@ -17,11 +17,14 @@
  * under the License.
  */
 var mapimg = new Image();
+var ewimg = new Image();
 var db;  
 
 
 const CWIDTH = 1014; // 507;
 const CHEIGHT = 660; // 330;
+const CEWWIDTH = 718;
+const CEWHEIGHT = 744;
 var bi = 0;
 var my_media = null;
 
@@ -139,6 +142,13 @@ var app = {
             //}
             window.location = "#page3";
         });
+        document.getElementById("canvas2").addEventListener("click", function(e) {
+            //alert("x: " + e.pageX + " - y:" + e.pageY)
+            app.getFeature(e.pageX, e.pageY);
+            window.location = "#page5";
+        });
+        document.getElementById("btn4").addEventListener("click", this.getLocation);
+        document.getElementById("ewlink").addEventListener("click", this.loadEWimg)
         document.getElementById("btn1").addEventListener("click", app.playAudio1);
         document.getElementById("btn2").addEventListener("click", app.playAudio2);
         document.getElementById("mapbutton").addEventListener("click", app.stopDetail);
@@ -152,6 +162,7 @@ var app = {
     },
     
     mapmult: 0.5,
+    ewmapmult: 1.0,
 
     dbsuccess: function() {
         //alert("copy success");
@@ -180,29 +191,47 @@ var app = {
         //console.log(CWIDTH * app.mapmult);
     },
 
+    loadEWimg: function() {
+        let ctx = document.getElementById("canvas2").getContext("2d");
+        ctx.drawImage(ewimg, 0, 0);
+    },
+
     setImg: function() {
         
         var setHeight = (window.innerHeight > window.innerWidth) ? window.innerWidth: window.innerHeight;
         var cvs = document.getElementById("canvas1");
+        var ewcvs = document.getElementById("canvas2")
         if (setHeight >= CHEIGHT + 10) {
             cvs.width = CWIDTH;
-            cvs.height = cvs.width * 0.65; // "auto";
             mapimg.src = "img/park_hdpi.jpg";
             app.mapmult = 0.5;
             //console.log("high");
         } else if (setHeight >= CHEIGHT * 0.55) {
             cvs.width = CWIDTH * 0.60;
-            cvs.height = cvs.width * 0.65; // "auto";
             mapimg.src = "img/park_mdpi.jpg";
             app.mapmult = 0.78;
-            //console.log("med");
+            //console.log("med");   
         } else {
             cvs.width = CWIDTH * 0.5;
-            cvs.height = cvs.width * 0.65; // "auto";
             mapimg.src = "img/park_ldpi.jpg";
             app.mapmult = 1.0;
-            //console.log("low");
+            //console.log("low");  
         }
+        cvs.height = cvs.width * 0.65; // "auto";
+        if (setHeight >= CEWHEIGHT + 10) {
+            app.ewmapmult = 1.0
+            ewcvs.width = CEWWIDTH;
+            ewimg.src = "img/EastWLparkhdpi.png"
+        } else if (setHeight >= CEWHEIGHT * .55) {
+            app.ewmapmult = 0.62
+            ewcvs.width = CEWWIDTH * .62;
+            ewimg.src = "img/EastWLparkmdpi.png"
+        } else {
+            app.ewmapmult = 0.5
+            ewcvs.width = CEWWIDTH * .5;
+            ewimg.src = "img/EastWLparkldpi.png"
+        }
+        ewcvs.height = ewcvs.width * 1.1
         //mapimg.width = cvs.width;
         //mapimg.height = cvs.height;
         // if (window.innerWidth >= 940) {
@@ -286,7 +315,19 @@ var app = {
         //db.transaction(this.getSql, this.errData, app.showData);
         //console.log(x + "-" + y)
     }, 
-             
+    
+    getFeature: function(x, y) {
+        x = x / this.ewmapmult;
+        y = y / this.ewmapmult;
+        if (x > 260 && x < 300 && y > 560 && y < 600) {
+            document.getElementById("page5name").innerText = "Moody Memorial Overlook";
+        } else if (x > 195 && x < 230 && y > 285 && y < 320) {
+            document.getElementById("page5name").innerText = "Herb Guenther Overlook";
+        } else {
+            document.getElementById("page5name").innerText = "missed";
+        }
+    },
+
     getSql: function(tx) {
         tx.executeSql(app.sql, [], app.showData, app.errData);
     },
@@ -334,6 +375,41 @@ var app = {
 
     lockOrientation: function() {
         screen.orientation.lock("landscape");
+    },
+    getLocation: function () {
+        navigator.geolocation.getCurrentPosition(app.geoSuccess, app.geoError);
+    },
+    geoSuccess: function (position) {
+        //alert(position.coords.latitude + ":" + position.coords.longitude);
+        //let ctx = document.getElementById("canvas2").getContext("2d");
+        let top = 32.7330;
+        let left = -114.6172;
+        let right = -114.5966;
+        let bottom = 32.7155;
+        let x = (position.coords.longitude - left) / (right - left) * CEWWIDTH * app.ewmapmult ;
+        let y = (position.coords.latitude - top) / (bottom - top) * CEWHEIGHT * app.ewmapmult;
+        app.showDot(x, y, 20);
+    },
+    geoError: function(error) {
+        alert(error.message);
+    },
+    showDot: function(x, y, size) {
+        let ctx = document.getElementById("canvas2").getContext("2d");
+        //console.log(size);
+        app.loadEWimg();
+        ctx.beginPath();
+        ctx.fillStyle = "red";
+        ctx.strokeStyle = "red"
+        ctx.lineWidth = 6
+        ctx.arc(x, y, size, 0, 2 * Math.PI)
+        ctx.stroke();
+        if (size > 6){
+            setTimeout(function() {
+                app.showDot(x, y, size - 2)
+            }, 100);
+        } else {
+            ctx.fill()
+        }
     }
 };
 
