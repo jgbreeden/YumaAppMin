@@ -79,7 +79,7 @@ var Bimage = ["img/vic.jpg", "img/storehouse2.jpg", "img/qmo.jpg",
     ];
     //console.log(Bimage[0]);
 
-var Ewimage = ["ewlegend.png",
+var Ewimg = ["ewlegend.png",
     "overlook2.jpg",
     "guentheroverlook.jpg",
     "sunrisept.jpg",
@@ -380,7 +380,7 @@ var app = {
         if(ei >= 0) {
             document.getElementById("page5name").innerText = Ewtitle[ei]; 
         
-            document.getElementById("p5image").innerText = Ewimg[ei];
+            document.getElementById("p5img").innerText = Ewimg[ei];
 
             document.getElementById("p5text").innerText = Ewtext[ei];
         }
