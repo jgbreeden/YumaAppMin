@@ -209,7 +209,7 @@ var app = {
         } else if (setHeight >= CHEIGHT * 0.55) {
             cvs.width = CWIDTH * 0.60;
             mapimg.src = "img/park_mdpi.jpg";
-            app.mapmult = 0.78;
+            app.mapmult = 0.75;
             //console.log("med");   
         } else {
             cvs.width = CWIDTH * 0.5;
@@ -281,7 +281,7 @@ var app = {
             //replace this big button with small button
             this.sql += "8";
             bi = 8;
-        }else if (x >= 400 && x <= 450 && y >= 210 && y <= 240 ){ 
+        }else if (x >= 400 && x <= 450 && y >= 200 && y <= 250 ){ 
             //console.log("river siphon");
             this.sql += "10";
             bi = 10;
