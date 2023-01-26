@@ -173,8 +173,9 @@ var app = {
             window.location = "#page3";
         });
         document.getElementById("canvas2").addEventListener("click", function(e) { 
-            app.getFeature(e.pageX, e.pageY);
-            window.location = "#page5";
+            if(app.getFeature(e.pageX, e.pageY) >= 0 ) { 
+                window.location = "#page5";
+            }
         });
         document.getElementById("btn4").addEventListener("click", this.getLocation);
         document.getElementById("ewlink").addEventListener("click", this.loadEWimg);
@@ -373,11 +374,18 @@ var app = {
         } else if (x > 425 && x < 445 && y > 665 && y < 685) {
             ei = 6;
         } else {
-            document.getElementById("page5name").innerText = "missed";
+            ei = -1
             
         }
-        document.getElementById("page5name").innerText = Ewtitle[ei];
-        console.log("this is x " + x + " this is y " + y);
+        if(ei >= 0) {
+            document.getElementById("page5name").innerText = Ewtitle[ei]; 
+        
+            document.getElementById("p5img").innerText = Ewimg[ei];
+
+            document.getElementById("p5text").innerText = Ewtext[ei];
+        }
+        return ei 
+
     },
              
     getSql: function(tx) {
