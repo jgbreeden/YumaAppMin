@@ -358,19 +358,19 @@ var app = {
             ei = 0;
         }else if (x > 250 && x < 300 && y > 560 && y < 600) {
             ei = 1;
-        }else if (x > 200 && x < 220 && y > 300 && y < 325) {
+        }else if (x > 190 && x < 230 && y > 300 && y < 325) {
             ei = 2;
-        } else if (x > 115 && x < 135 && y > 85 && y < 105) {
+        } else if (x > 105 && x < 145 && y > 85 && y < 105) {
             ei = 3;
-        } else if (x > 600 && x < 620 && y > 635 && y < 655) {
+        } else if (x > 590 && x < 630 && y > 635 && y < 655) {
             ei = 4;
-        } else if (x > 275 && x < 295 && y > 265 && y < 285) {
+        } else if (x > 265 && x < 305 && y > 255 && y < 295) {
             ei = 5;
-        } else if (x > 505 && x < 525 && y > 370 && y < 390) {
+        } else if (x > 495 && x < 535 && y > 360 && y < 400) {
             ei = 5;
-        } else if (x > 185 && x < 205 && y > 165 && y < 185) {
+        } else if (x > 175 && x < 215 && y > 155 && y < 195) {
             ei = 6;
-        } else if (x > 425 && x < 445 && y > 665 && y < 685) {
+        } else if (x > 415 && x < 455 && y > 655 && y < 695) {
             ei = 6;
         } else {
             document.getElementById("page5name").innerText = "missed";
