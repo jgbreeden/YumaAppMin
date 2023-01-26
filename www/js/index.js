@@ -380,7 +380,7 @@ var app = {
         if(ei >= 0) {
             document.getElementById("page5name").innerText = Ewtitle[ei]; 
         
-            document.getElementById("p5img").innerText = Ewimg[ei];
+            document.getElementById("p5img").src = Ewimg[ei];
 
             document.getElementById("p5text").innerText = Ewtext[ei];
         }
