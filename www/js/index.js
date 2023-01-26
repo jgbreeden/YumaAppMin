@@ -59,11 +59,13 @@ var Btitle = ["Info Center",
     ];
     //console.log(Btitle[0]);
 
-var Ewtitle = ["Moody Memorial Overlook",
+var Ewtitle = ["Map Legend",
+    "Moody Memorial Overlook",
     "Herb Guenther Overlook", 
     "Sunrise Point Park",
     "Sunset View Park",
-    "Map Legend"
+    "CottonWoods,Willow & Mesquite Habitat",
+    "Wetland/Marsh Restoreation"
      ];
      //console.log(Ewtitle[0]);
 
@@ -76,6 +78,26 @@ var Bimage = ["img/vic.jpg", "img/storehouse2.jpg", "img/qmo.jpg",
     "img/siphon.jpg" 
     ];
     //console.log(Bimage[0]);
+
+var Ewimage = ["ewlegend.png",
+    "overlook2.jpg",
+    "guentheroverlook.jpg",
+    "sunrisept.jpg",
+    "sunsetview.jpg",
+    "cottonwood.jpg",
+    "marsh.jpg"
+    //console.log(Ewimage[0]);
+    ]
+
+var Ewtext = ["Scenic Overloook and Restoreation areas can be clicked for more info",
+    "Named after Robert J. Moody who helped initiate the first Yuma County Fair",
+    "Named after Herb Guenther who served as a commisioner for the Arizona Game and Fish Department",
+    "Sunrise Point Park was founded by an Arizona State Parks grant with a match from the Yuma Parks and National Heritage Area via Bureau of Reclamation funding",
+    "Sunset View Nature Park is being planned by the Yuma Crossing National Heritage Area",
+    "Cottonwood Habitat is nearly 400 acres that have been transformed from a trash dumb filled with hobo camps into a mosaic of marsh, mesquite, cottonwood, and willows",
+    "Ongoing maintenance funding for this project is provided by the lower Colorado Multi-Species Conservation Program, Heritage Area, City of Yuma and Quechan"
+    //console.log(Ewtext[0]);
+    ]
 
 var BtnLabel1 = ["Where Does All the Water Go? &#128266;",
     "1870s &#128266;",
@@ -150,7 +172,7 @@ var app = {
             //}
             window.location = "#page3";
         });
-        document.getElementById("canvas2").addEventListener("click", fucntion(e) { 
+        document.getElementById("canvas2").addEventListener("click", function(e) { 
             app.getFeature(e.pageX, e.pageY);
             window.location = "#page5";
         });
