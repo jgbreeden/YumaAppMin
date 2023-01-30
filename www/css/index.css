@@ -119,6 +119,14 @@ h1 {
     border-color: rgb(39, 66, 31);
 }
 
+#p5img {
+    float: left;
+    width: 500px;
+    margin-right: 5%;
+    border-style: solid;
+    border-width: 3px; 
+}
+
 #p3text {
     text-transform: none;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -180,4 +188,5 @@ h1 {
 }
 #canvas2 {
     margin-left: -15px;
+
 }

@@ -79,13 +79,13 @@ var Bimage = ["img/vic.jpg", "img/storehouse2.jpg", "img/qmo.jpg",
     ];
     //console.log(Bimage[0]);
 
-var Ewimg = ["ewlegend.png",
-    "overlook2.jpg",
-    "guentheroverlook.jpg",
-    "sunrisept.jpg",
-    "sunsetview.jpg",
-    "cottonwood.jpg",
-    "marsh.jpg"
+var Ewimg = ["img/ewlegend.png",
+    "img/overlook2.jpg",
+    "img/guentheroverlook.jpg",
+    "img/sunrisept.jpg",
+    "img/sunsetview.jpg",
+    "img/cottonwood.jpg",
+    "img/marsh.jpg"
     //console.log(Ewimage[0]);
     ]
 
