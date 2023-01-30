@@ -194,18 +194,18 @@ var app = {
     mapmult: 0.5,
     ewmapmult: 1,
 
-    dbsuccess: function() {
+    //dbsuccess: function() {
         //alert("copy success");
-        db = window.sqlitePlugin.openDatabase({name:"YumaApp.db", location: "default"});
-    },
+        //db = window.sqlitePlugin.openDatabase({name:"YumaApp.db", location: "default"});
+    //},
 
-    dbfail: function(err) {
-        if(e.code == 516) {
-            db = window.sqlitePlugin.openDatabase({name:"YumaApp.db", location: "default"});
-        } else {
-            alert(e.message);
-        }
-    },
+    //dbfail: function(err) {
+        //if(e.code == 516) {
+            //db = window.sqlitePlugin.openDatabase({name:"YumaApp.db", location: "default"});
+        //} else {
+            //alert(e.message);
+        //}
+    //},
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -388,19 +388,19 @@ var app = {
 
     },
              
-    getSql: function(tx) {
-        tx.executeSql(app.sql, [], app.showData, app.errData);
-    },
+    //getSql: function(tx) {
+        //tx.executeSql(app.sql, [], app.showData, app.errData);
+    //},
 
-    showData: function(tx,result){
-        document.getElementById("p3img").src = "img/" + result.rows.item(0).imgname;
-        document.getElementById("p3text").innerText = result.rows.item(0).description;
-        document.getElementById("pagename").innerText = result.rows.item(0).title;
-    },
+    //showData: function(tx,result){
+       // document.getElementById("p3img").src = "img/" + result.rows.item(0).imgname;
+        //document.getElementById("p3text").innerText = result.rows.item(0).description;
+        //document.getElementById("pagename").innerText = result.rows.item(0).title;
+    //},
 
-    errData: function(err) {
-        alert("error:" + err.message + ":" + err.code);
-    },
+    //errData: function(err) {
+        //alert("error:" + err.message + ":" + err.code);
+    //},
 
     onBackButtonClicked: function() {
         console.log(window.location);
