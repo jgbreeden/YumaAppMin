@@ -64,7 +64,7 @@ var Ewtitle = ["Map Legend",
     "Herb Guenther Overlook", 
     "Sunrise Point Park",
     "Sunset View Park",
-    "CottonWoods,Willow & Mesquite Habitat",
+    "Cottonwood, Willow\n & Mesquite Habitat",
     "Wetland/Marsh Restoreation"
      ];
      //console.log(Ewtitle[0]);
@@ -89,13 +89,13 @@ var Ewimg = ["img/ewlegend.png",
     //console.log(Ewimage[0]);
     ]
 
-var Ewtext = ["Scenic Overloook and Restoreation areas can be clicked for more info",
-    "Named after Robert J. Moody who helped initiate the first Yuma County Fair",
-    "Named after Herb Guenther who served as a commisioner for the Arizona Game and Fish Department",
-    "Sunrise Point Park was founded by an Arizona State Parks grant with a match from the Yuma Parks and National Heritage Area via Bureau of Reclamation funding",
-    "Sunset View Nature Park is being planned by the Yuma Crossing National Heritage Area",
-    "Cottonwood Habitat is nearly 400 acres that have been transformed from a trash dumb filled with hobo camps into a mosaic of marsh, mesquite, cottonwood, and willows",
-    "Ongoing maintenance funding for this project is provided by the lower Colorado Multi-Species Conservation Program, Heritage Area, City of Yuma and Quechan"
+var Ewtext = ["Scenic Overloook and Restoreation areas can be clicked for more info.",
+    "Named after Robert J. Moody who helped initiate the first Yuma County Fair.",
+    "Named after Herb Guenther who served as a commisioner for the Arizona Game and Fish Department.",
+    "Sunrise Point Park was founded by an Arizona State Parks grant with a match from the Yuma Parks and National Heritage Area via Bureau of Reclamation funding.",
+    "Sunset View Nature Park is being planned by the Yuma Crossing National Heritage Area.",
+    "Cottonwood Habitat is nearly 400 acres that have been transformed from a trash dump filled with hobo camps into a mosaic of marsh, mesquite, cottonwood, and willows.",
+    "Ongoing maintenance funding for this project is provided by the lower Colorado Multi-Species Conservation Program, Heritage Area, City of Yuma and Quechan."
     //console.log(Ewtext[0]);
     ]
 
