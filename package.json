@@ -14,7 +14,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "android": "0.0.8",
-    "cordova": "^11.0.0",
+    "cordova": "^11.1.0",
     "cordova-android": "^8.1.0",
     "cordova-plugin-media": "^5.0.4",
     "cordova-plugin-screen-orientation": "^3.0.2"
